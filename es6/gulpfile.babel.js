@@ -1,2 +1,4 @@
-import requireDir from 'require-dir'
-requireDir('./tasks')
+import requireDir from 'require-dir';
+requireDir('./tasks');
+
+

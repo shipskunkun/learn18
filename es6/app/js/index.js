@@ -1,3 +1,9 @@
-import './class/lesson1.js'
+class Test {
+	constructor() {
+		this.a = 'hello world'
+	}
+}
 
-console.log(123);
+let test = new Test();
+
+document.body,innerHTML = test.a;
