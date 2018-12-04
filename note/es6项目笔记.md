@@ -26,6 +26,7 @@ webpack-stream: 是webpack对gulp的支持
 npm install -g express-generator  //安装express
 cd server   //切换到安装路径
 express -e .   //
+npm install express  //还是得在项目目录下安装express，否则在执行js文件仍报Error: Cannot find module express错误。
 
 npm init  // 在es6下执行，生成package.json文件
 touch .babelrc   //  touch 是创建的意思，创建 .babelrc 这个文件
@@ -103,19 +104,11 @@ gulp.dest()
  
  
  
- 
- 2.4 
- 
- 
- 
- 
- 
- 
- 
- 
- 第
- 
- 
+2.5   
+几点注意的     
+https://segmentfault.com/q/1010000013456976  
+代码中的 loaders 改成rules
+
  
  
  
