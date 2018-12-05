@@ -45,18 +45,18 @@
 }
 
 /*
-	直接 {} = {} 不行
+	直接 {} = {} 不行 ，因为表达式左侧的花括号会被解析成代码块而不是对象字面量
 	({} = {})  为啥可以？
 	let {name, age} = o 也可以？
 
  */
 {
-	// let o = {name: "li", age: 123};
-	// let {name, age} = o ;
+	let o = {name: "li", age: 123};
+	let {name, age} = o ;
 	// let name, age;
-	// ({name, age} = {name: "li", age: 123}); 
+	// ({name, age} = {name: "li", age: 123});
 	//等价于：
-	let {name: name, age: age} = {name: "lisi", age: 123}
+	// let {name: name, age: age} = {name: "lisi", age: 123}
 	console.log(name, age);
 }
 
