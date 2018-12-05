@@ -1,10 +1,16 @@
 ES6项目学习笔记
 [ES6零基础教学 解析彩票项目](https://coding.imooc.com/class/98.html)   
 
- 
-第2章
 
-2.1  
+
+
+
+
+
+
+### 第2章
+
+#### 2.1  
 自动构建：   
 1.编译，es6编译成es5,甚至编译成es3，很多大公司还不能放弃ie8,ie9  
 2.辅助  
@@ -20,25 +26,48 @@ webpack: 模块化工具
 webpack-stream: 是webpack对gulp的支持  
 	
 	
-2.2 安装文件之类的
+#### 2.2 安装文件之类的
+
+项目目录结构   
+
+```
+ES6 --app      //src      
+		-- css
+		-- js  
+			-- class // 类文件
+			-- index.js // 入口文件
+
+		-- views //模板文件
+			-- error.ejs   //错误模板，express 模板引擎使用的
+			-- index.ejs   //入口模板，相当于 html 文件
+		
+    -- server  //dest后放置代码的文件夹  
+    -- tasks   //写一些gulp task的
+    -- package.json  //npm init 
+```
+
+
+express 框架使用的引擎就是 ejs 引擎
+
 
 ``` 
 npm install -g express-generator  //安装express
 cd server   //切换到安装路径
-express -e .   //
+express -e .   //使用ejs 作为模板引擎
 npm install express  //还是得在项目目录下安装express，否则在执行js文件仍报Error: Cannot find module express错误。
 
 npm init  // 在es6下执行，生成package.json文件
 touch .babelrc   //  touch 是创建的意思，创建 .babelrc 这个文件
 touch gulpfile.babel.js  //
  
+```
  
- 2.3
+####  2.3
  我们所有的构建脚本都是在 tasks 目录下
  
  livereload  //热更新的包，不用刷新浏览器
  
- 
+ ```
  写完了安装这些包，
 npm install gulp gulp-if gulp-concat webpack webpack-stream vinyl-named gulp-livereload gulp-plumber gulp-rename gulp-uglify yargs --save-dev
  
@@ -67,9 +96,7 @@ npm install gulp-util  // 不知道这个要单独安装
   }
  ```
  
- 
-    
-```
+
 
 
 gulp 能干哪些事儿：
@@ -91,7 +118,6 @@ http://www.cnblogs.com/Darren_code/p/gulp.html
 常用的task 什么意思你知道么
 
 
-
 gulp.src(globs[, options])  
 你只需简单的理解可以用这个方法来读取你需要操作的文件就行了  
 gulp.dest()   
@@ -104,15 +130,40 @@ gulp.dest()
  
  
  
-2.5   
+ 
+ 
+#### 2.5   
 几点注意的     
 https://segmentfault.com/q/1010000013456976  
 代码中的 loaders 改成rules
 
  
+##### 最常见的错误
+如：
+Cannot find module 'express'  
+没安装对应的文件包，npm install  某某包   --save-dev 
+
+
+##### 报错1
+configuration.module has an unknown property 'loaders'. These properties are valid:
+
+[新手运行webpack 报错： unknown property 'loaders'.](https://segmentfault.com/q/1010000013456976)
+
+
+把出错地方的loaders改成rules即可
+
+##### 报错2
+It's no longer allowed to omit the '-loader' suffix when using loaders.
+     You need to specify 'babel-loader' instead of 'babel',
+
+
+    
+把出错地方的 bebel 改成 babel-loader
  
  
  
+ 在生成的 index.ejs 中，要引入js文件  
+ 我说怎么老是不行呢
  
  
  
