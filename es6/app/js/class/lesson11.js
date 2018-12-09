@@ -100,6 +100,15 @@ set map
 	console.log('map2', map2);
 	console.log('size', map2.size);
 
+	console.log('has', map2.has('name'));
+
+	map2.delete('name');
+	console.log('delete', map2.has('name'));
+	console.log('map2', map2);
+
+	map2.clear();
+	console.log('map2', map2);
+
 }
 
 
