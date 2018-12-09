@@ -5,9 +5,18 @@ set map
 	里面的数据是惟一的
 	作用：去重，但是不会做数据类型的转换
 	方法和属性：add,delete,clear,has  size
-	遍历：keys 和 values 值是一样的
+	遍历：
+		keys  values entries forEach
+	和 WeakSet 区别？
+		不能添加普通数据，只能添加对象
+		没有clear方法，add,delete,has，没有size,不能遍历
+
 
 2. Map的用法, 和Object的区别
+	key可以是任何数据
+	注意两种定义方式
+	方法和属性：set,get,delete,clear,has   size
+	遍历：同Set
 */
 
 {
@@ -68,11 +77,30 @@ set map
 	})
 }
 
+{
+	let weaklist = new WeakSet();
+	let arg = {};
+	weaklist.add(arg);
+	// weaklist.add(2);
+	console.log('weaklist', weaklist);
+
+}
+
+{
+	let map = new Map();
+	let arr = ['123'];
+	map.set(arr, 456);
+	console.log('map', map);
+	console.log('map.get', map.get(arr));
+}
 
 
+{
+	let map2 = new Map([['name', 'zhangsan'], ['age', 123]]);
+	console.log('map2', map2);
+	console.log('size', map2.size);
 
-
-
+}
 
 
 
