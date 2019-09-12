@@ -1,7 +1,7 @@
 import 'babel-polyfill';
 // import './class/lesson14';
 
-import * as lesson from './class/lesson16';
+import * as lesson from './es6test/10';
 
 /*
 console.info({

@@ -6,12 +6,29 @@
   </head>
   <body>
   	<!--lesson7测试-->
-    <p>段落1</p>
-    <p>段落2</p>
-    <p>段落3</p>
-    <p>段落4</p>
-    <p>段落5</p>
+
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-    <script src="/js/index.js"></script>
+    
+
+    <p onclick="fangdou()">段落1</p>
+
+
+    <script src="/js/index.js">
+      {
+        let  time = 2000;
+        function fn() {
+          console.log('执行点击事件');
+        }
+        function fangdou(fn, time) {
+          if(timer) {
+            clearTimeout(timer);
+          }
+          var timer = setTimeout(
+            function(){
+              fn();
+            }, time);
+        }
+      }
+    </script>
   </body>
 </html>
